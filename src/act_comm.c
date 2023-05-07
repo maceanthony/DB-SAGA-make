@@ -594,9 +594,9 @@ void talk_channel( CHAR_DATA *ch, char *argument, int channel, const char *verb 
 			break;
 		case CHANNEL_NEWBIE:
 			//argument = remove_color(argument);
-			pager_printf_color( ch, "&D&W[&C%s&W] &w%s&W:&B '%s&D&B'&D\n\r", verb, ch->name, argument );
-			sprintf( buf, "&D&W[&C%s&W] &w%s&W:&B '%s&D&B'&D\n\r", verb, ch->name, argument );
-			sprintf( buf_invis, "&D&W[&C%s&W] &wSomeone&W:&B '%s&D&B'&D\n\r", verb, argument );
+			pager_printf_color( ch, "&D&W[&C%s&W] &w%s&W:&B '&w%s&D&B'&D\n\r", verb, ch->name, argument );
+			sprintf( buf, "&D&W[&C%s&W] &w%s&W:&B '&w%s&D&B'&D\n\r", verb, ch->name, argument );
+			sprintf( buf_invis, "&D&W[&C%s&W] &wSomeone&W:&B '&w%s&D&B'&D\n\r", verb, argument );
 			break;
 		case CHANNEL_MUSIC:
 			pager_printf_color( ch, "&D&W[&C%s&W] &C%s&W:&c '%s&D&c'&D\n\r", verb, ch->name, argument );
