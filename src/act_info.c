@@ -4960,7 +4960,7 @@ bool gTrainSuccess(CHAR_DATA *ch, int stat, sh_int *tAbility)
 	if (ch->race != 6)
 	{
 		if (is_saiyan(ch)) /* Saiyan */
-			xp_mod = 0.66;
+			xp_mod = 1.50;
 		else if (is_namek(ch)) /* Namek */
 			xp_mod = 0.665;
 		else if (is_hb_hb(ch)) /* Halfbreed-hb */
