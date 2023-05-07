@@ -69,7 +69,7 @@ C_FILES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c \
           space.c special.c stat_obj.c tables.c track.c update.c dns.c skills_genie.c \
           new_auth.c md5.c changes.c
 
-H_FILES = mud.h bet.h board.h finger.h hotboot.h house.h pfiles.h rare.h new_auth.h
+H_FILES = mud.h bet.h board.h finger.h hotboot.h house.h pfiles.h rare.h new_auth.h changes.h
 
 all:
 	make dbs
