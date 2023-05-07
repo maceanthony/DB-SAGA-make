@@ -56,7 +56,7 @@ O_FILES = act_comm.o act_info.o act_move.o act_obj.o act_wiz.o ban.o \
           planet.o player.o polymorph.o rare.o requests.o reset.o save.o \
           services.o shops.o skills.o skills_android.o skills_dbs.o skills_genie.o \
           space.o special.o stat_obj.o tables.o track.o update.o dns.o new_auth.o \
-          md5.o
+          md5.o changes.o
 
 C_FILES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c \
           board.c boards.c bounty.c build.c clans.c colorize.c comm.c \
@@ -67,7 +67,7 @@ C_FILES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c \
           planet.c player.c polymorph.c rare.c requests.c reset.c save.c \
           services.c shops.c skills.c skills_android.c skills_dbs.c\
           space.c special.c stat_obj.c tables.c track.c update.c dns.c skills_genie.c \
-          new_auth.c md5.c
+          new_auth.c md5.c changes.c
 
 H_FILES = mud.h bet.h board.h finger.h hotboot.h house.h pfiles.h rare.h new_auth.h
 
