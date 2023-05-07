@@ -540,7 +540,7 @@ void gain_exp( CHAR_DATA *ch, long double gain )
 
 /*  PL high enough to gain more energy */
 
-    if (ch->exp >= (pow(ch->max_energy,2.27) * 750)
+    if (ch->exp >= (pow(ch->max_energy,2.27) * 300)
     	&& ch->max_mana < 99999 )
     {
 	set_char_color( AT_LBLUE + AT_BLINK, ch );
