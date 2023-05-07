@@ -4925,7 +4925,7 @@ bool gTrainSuccess(CHAR_DATA *ch, int stat, sh_int *tAbility)
 	int increase = 0;
 
 
-	increase = number_range(1, 3);
+	increase = number_range(4, 12);
 	*tAbility += increase;
 	if (xIS_SET(ch->in_room->room_flags, ROOM_TIME_CHAMBER)
 	    && number_range(1, 100) < 35)
@@ -4950,7 +4950,7 @@ bool gTrainSuccess(CHAR_DATA *ch, int stat, sh_int *tAbility)
 		}
 	}
 
-	if (increase >= 2)
+	if (increase >= 10)
 	{
 		ch->hit--;
 	}
@@ -4962,26 +4962,26 @@ bool gTrainSuccess(CHAR_DATA *ch, int stat, sh_int *tAbility)
 		if (is_saiyan(ch)) /* Saiyan */
 			xp_mod = 0.75;
 		else if (is_namek(ch)) /* Namek */
-			xp_mod = 0.665;
+			xp_mod = 0.73;
 		else if (is_hb_hb(ch)) /* Halfbreed-hb */
-                        xp_mod = 0.69;
+                        xp_mod = 0.745;
 		else if (is_hb(ch)) /* Halfbreed */
-			xp_mod = 0.68;
+			xp_mod = 0.745;
 		else				/* Everyone Else */
-			xp_mod = 0.67;
+			xp_mod = 0.74;
 	}
 	else
 	{
 		if (ch->pcdata->absorb_pl_mod == 0) /* Saiyan */
-			xp_mod = 0.66;
+			xp_mod = 0.75;
 		else if (ch->pcdata->absorb_pl_mod == 3) /* Namek */
-			xp_mod = 0.665;
+			xp_mod = 0.73;
 		else if (ch->pcdata->absorb_pl_mod == 2) /* Halfbreed */
-			xp_mod = 0.68;
+			xp_mod = 0.745;
 		else if (ch->pcdata->absorb_pl_mod == 6)
-			xp_mod = 0.65;
+			xp_mod = 0.72;
 		else								/* Everyone Else */
-			xp_mod = 0.67;
+			xp_mod = 0.74;
 	}
 
 	xp_mod = (float) xp_mod - 0.01;
