@@ -82,6 +82,7 @@ DO_FUN *skill_function( char *name )
       if ( !str_cmp( name, "do_accelerate"                ))    return do_accelerate;
       if ( !str_cmp( name, "do_accessories"               ))    return do_accessories;
       if ( !str_cmp( name, "do_add_imm_host"              ))    return do_add_imm_host;
+      if ( !str_cmp( name, "do_addchange" ))          return do_addchange;
       if ( !str_cmp( name, "do_addpilot"                  ))    return do_addpilot;
       if ( !str_cmp( name, "do_admintalk"                 ))    return do_admintalk;
       if ( !str_cmp( name, "do_adminto"                   ))    return do_adminto;
@@ -142,7 +143,6 @@ DO_FUN *skill_function( char *name )
       if ( !str_cmp( name, "do_bolt"                      ))    return do_bolt;
       if ( !str_cmp( name, "do_botwatch"                  ))    return do_botwatch;
       if ( !str_cmp( name, "do_bounty"                    ))    return do_bounty;
-      if ( !str_cmp( name, "do_addchange" ))          return do_addchange;
       if ( !str_cmp( name, "do_brandish"                  ))    return do_brandish;
       if ( !str_cmp( name, "do_brew"                      ))    return do_brew;
       if ( !str_cmp( name, "do_bset"                      ))    return do_bset;

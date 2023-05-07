@@ -122,7 +122,7 @@ void delete_change(int iChange)
 }
  
 
-void do_addchange(CHAR_DATA *ch, const char *argument )
+void do_addchange(CHAR_DATA *ch, char *argument )
 {
   char buf1[MAX_STRING_LENGTH];
     CHANGE_DATA * new_table;
