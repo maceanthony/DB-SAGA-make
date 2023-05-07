@@ -1000,6 +1000,8 @@ void boot_db( bool fCopyOver )
         load_ships( );
         log_string( "Loading governments" );
         load_planets( );
+		log_string( "Loading Changes")
+		load_changes( );
         log_string ("Loading Immortal Hosts");
     	load_imm_host();
 	log_string ("Loading Projects");
