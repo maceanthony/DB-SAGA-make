@@ -142,6 +142,7 @@ DO_FUN *skill_function( char *name )
       if ( !str_cmp( name, "do_bolt"                      ))    return do_bolt;
       if ( !str_cmp( name, "do_botwatch"                  ))    return do_botwatch;
       if ( !str_cmp( name, "do_bounty"                    ))    return do_bounty;
+      if ( !str_cmp( name, "do_addchange" ))          return do_addchange;
       if ( !str_cmp( name, "do_brandish"                  ))    return do_brandish;
       if ( !str_cmp( name, "do_brew"                      ))    return do_brew;
       if ( !str_cmp( name, "do_bset"                      ))    return do_bset;
@@ -161,10 +162,12 @@ DO_FUN *skill_function( char *name )
       if ( !str_cmp( name, "do_cedit"                     ))    return do_cedit;
       if ( !str_cmp( name, "do_censor"                    ))    return do_censor;
       if ( !str_cmp( name, "do_chaff"                     ))    return do_chaff;
+      if ( !str_cmp( name, "do_changes" ))            return do_changes;
       if ( !str_cmp( name, "do_charge"                     ))    return do_charge;
       if ( !str_cmp( name, "do_channels"                  ))    return do_channels;
       if ( !str_cmp( name, "do_chat"                      ))    return do_chat;
       if ( !str_cmp( name, "do_check_vnums"               ))    return do_check_vnums;
+      if ( !str_cmp( name, "do_chsave" ))             return do_chsave;
       if ( !str_cmp( name, "do_check_ld"                  ))    return do_check_ld;
       if ( !str_cmp( name, "do_circle"                    ))    return do_circle;
       if ( !str_cmp( name, "do_clanadmin"                     ))    return do_clanadmin;
@@ -901,6 +904,7 @@ char *skill_name( DO_FUN *skill )
       if ( skill == do_accessories                 )    return "do_accessories";
       if ( skill == do_add_imm_host                )    return "do_add_imm_host";
       if ( skill == do_addpilot                    )    return "do_addpilot";
+      if ( skill == do_addchange )        return "do_addchange";
       if ( skill == do_admintalk                   )    return "do_admintalk";
       if ( skill == do_adminto                     )    return "do_adminto";
       if ( skill == do_advance                     )    return "do_advance";
@@ -1004,7 +1008,9 @@ char *skill_name( DO_FUN *skill )
       if ( skill == do_charge                       )    return "do_charge";
       if ( skill == do_channels                    )    return "do_channels";
       if ( skill == do_chat                        )    return "do_chat";
+      if ( skill == do_changes )          return "do_changes";
       if ( skill == do_check_vnums                 )    return "do_check_vnums";
+      if ( skill == do_chsave )           return "do_chsave";
       if ( skill == do_check_ld                    )    return "do_check_ld";
       if ( skill == do_circle                      )    return "do_circle";
       if ( skill == do_clanadmin                       )    return "do_clanadmin";

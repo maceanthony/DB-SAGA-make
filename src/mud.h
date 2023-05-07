@@ -156,6 +156,7 @@ typedef	struct	skill_type		SKILLTYPE;
 typedef	struct	social_type		SOCIALTYPE;
 typedef	struct	cmd_type		CMDTYPE;
 typedef	struct	killed_data		KILLED_DATA;
+typedef struct  changes_data  CHANGE_DATA;
 typedef struct  deity_data		DEITY_DATA;
 typedef struct	wizent			WIZENT;
 typedef struct  ignore_data		IGNORE_DATA;
@@ -2903,6 +2904,15 @@ struct killed_data
     char		count;
 };
 
+struct changes_data
+{
+
+    char *         change;
+    char *         coder;
+    char *         date;
+    time_t         mudtime;
+};
+
 /* Structure for link list of ignored players */
 struct ignore_data
 {
@@ -4647,6 +4657,7 @@ DECLARE_DO_FUN( do_adminlist                   );
 DECLARE_DO_FUN( do_admintalk                   );
 DECLARE_DO_FUN( do_adminto                     );
 DECLARE_DO_FUN( do_advance                     );
+DECLARE_DO_FUN( do_addchange    );
 DECLARE_DO_FUN( do_affected                    );
 DECLARE_DO_FUN( do_afk                         );
 DECLARE_DO_FUN( do_ahelp                       );
@@ -4714,9 +4725,11 @@ DECLARE_DO_FUN( do_cedit                       );
 DECLARE_DO_FUN( do_censor                      );
 DECLARE_DO_FUN( do_chaff                       );
 DECLARE_DO_FUN( do_channels                    );
+DECLARE_DO_FUN( do_changes      );
 DECLARE_DO_FUN( do_chat                        );
 DECLARE_DO_FUN( do_charge                        );
 DECLARE_DO_FUN( do_check_vnums                 );
+DECLARE_DO_FUN( do_chsave       );
 DECLARE_DO_FUN( do_check_ld                    );
 DECLARE_DO_FUN( do_circle                      );
 DECLARE_DO_FUN( do_clandeposit                       );
@@ -5444,6 +5457,7 @@ char *	crypt		args( ( const char *key, const char *salt ) );
 #define BUG_FILE	SYSTEM_DIR "bugs.txt"	  /* For bug( )          */
 #define PBUG_FILE	SYSTEM_DIR "pbugs.txt"	  /* For 'bug' command   */
 #define IDEA_FILE	SYSTEM_DIR "ideas.txt"	  /* For 'idea'		 */
+#define CHANGE_FILE SYSTEM_DIR "changes.txt"  /* Changes file - txt  */
 #define TYPO_FILE	SYSTEM_DIR "typos.txt"	  /* For 'typo'		 */
 #define FIXED_FILE	SYSTEM_DIR "fixed.txt"	  /* For 'fixed' command */
 #define LOG_FILE	SYSTEM_DIR "log.txt"	  /* For talking in logged rooms */
@@ -5604,6 +5618,11 @@ int	get_mpflag	args( ( char *flag ) );
 int	get_dir		args( ( char *txt  ) );
 char *	strip_cr	args( ( char *str  ) );
 void smush_tilde	args( ( char *str ) );
+
+/* changes.c */
+void    load_changes            args( (void) );
+void    save_changes            args( (void) );
+void    delete_change           args( (int num) );
 
 /* clans.c */
 void save_alliance args( ( ) );
