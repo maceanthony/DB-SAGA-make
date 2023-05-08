@@ -3040,7 +3040,7 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 
     if (ch->race == 6 && victim->position <= POS_STUNNED && victim->hit < 1
     	 && !xIS_SET(ch->act, PLR_SPAR))
-    	bio_(ch, victim);
+    	bio_absorb(ch, victim);
     else
     switch( victim->position )
     {
