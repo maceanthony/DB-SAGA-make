@@ -1075,7 +1075,7 @@ void repair_one_obj( CHAR_DATA *ch, CHAR_DATA *keeper, OBJ_DATA *obj,
    }
                /* "repair all" gets a 10% surcharge - Gorog */
 
-   else if ( (cost = strcmp("all",arg) ? cost = 1) > ch->gold )
+   else if ( (cost = strcmp("all",arg) ? cost : 1) > ch->gold )
    {
       sprintf( buf,
        "$N tells you, 'It will cost %d zeni to %s %s...'", cost,
