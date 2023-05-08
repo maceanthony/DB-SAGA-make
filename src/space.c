@@ -59,12 +59,12 @@ char *  const   station_name [MAX_STATION] =
 
 int     const   bus_vnum [MAX_BUS_STOP] =
 {
-    6010 , 3871, 60000
+    210 , 3871, 60000
 };
 
 int     const   bus_vnum2 [MAX_BUS_STOP] =
 {
-    6008 , 5000, 40000
+    208 , 5000, 40000
 };
 
 char *  const   bus_stop [MAX_BUS_STOP+1] =

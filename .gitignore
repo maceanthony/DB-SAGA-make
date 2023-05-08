@@ -1,3 +1,4 @@
 *.o
 /player
 /area
+/system/commands.dat
