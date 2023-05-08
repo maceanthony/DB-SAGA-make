@@ -465,7 +465,7 @@ int get_repaircost( CHAR_DATA *keeper, OBJ_DATA *obj )
 	  {
 //		percent = obj->value[4] / obj->value[5];
 //		percent = 1 - percent;
-		cost = ((obj->value[5] - obj->value[4]) * 2) * (rShop->profit_fix / 100);
+		cost = 1;
 //	    cost = ( (obj->cost * 0.85) * percent ) * (rShop->profit_fix / 100);
 //	    cost = ((obj->value[5] - obj->value[4]) * 5) * (rShop->profit_fix / 100);
 	  }
@@ -1075,7 +1075,7 @@ void repair_one_obj( CHAR_DATA *ch, CHAR_DATA *keeper, OBJ_DATA *obj,
    }
                /* "repair all" gets a 10% surcharge - Gorog */
 
-   else if ( (cost = strcmp("all",arg) ? cost : 11*cost/10) > ch->gold )
+   else if ( (cost = strcmp("all",arg) ? cost = 1) > ch->gold )
    {
       sprintf( buf,
        "$N tells you, 'It will cost %d zeni to %s %s...'", cost,
