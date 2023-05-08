@@ -1139,7 +1139,7 @@ int dam_armor_recalc( CHAR_DATA *ch, int dam )
 	dam_to_ac = (double) armorValue / 200 * dam;
 	dam_to_lf = dam - ((double) armorValue / 10000 * dam);
 
-//	dam_to_ac *= 0.15;
+	dam_to_ac *= 0.15;
 
 	dam_to_ac = floor(dam_to_ac);
 	dam_to_lf = floor(dam_to_lf);
