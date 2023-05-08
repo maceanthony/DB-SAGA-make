@@ -4522,14 +4522,6 @@ Log         0
 End
 
 #COMMAND
-Name        savealliances~
-Code        do_savealliances
-Position    100
-Level       63
-Log         0
-End
-
-#COMMAND
 Name        sanctuary~
 Code        do_sanctuary
 Position    100

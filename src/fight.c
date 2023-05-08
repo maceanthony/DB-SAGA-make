@@ -3040,7 +3040,7 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 
     if (ch->race == 6 && victim->position <= POS_STUNNED && victim->hit < 1
     	 && !xIS_SET(ch->act, PLR_SPAR))
-    	bio_absorb(ch, victim);
+    	bio_(ch, victim);
     else
     switch( victim->position )
     {
@@ -5702,13 +5702,13 @@ void do_spar( CHAR_DATA *ch, char *argument )
 	return;
     }
 
-	if (!IS_NPC(ch) && !IS_NPC(victim) && ch -> pcdata -> sparcount >= 100)
+	if (!IS_NPC(ch) && !IS_NPC(victim) && ch -> pcdata -> sparcount >= 5000)
 	{
 		send_to_char("You are too tired from sparring to spar further today.\n\r",ch);
 		return;
 	}
 
-	if (!IS_NPC(ch) && !IS_NPC(victim) && victim -> pcdata -> sparcount >= 100)
+	if (!IS_NPC(ch) && !IS_NPC(victim) && victim -> pcdata -> sparcount >= 5000)
 	{
 		send_to_char("Your partner is too tired from sparring to spar further.\n\r",ch);
 		return;
