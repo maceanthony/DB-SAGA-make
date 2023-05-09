@@ -4788,7 +4788,7 @@ void do_meditate(CHAR_DATA *ch, char *argument )
 	{
 		send_to_char( "&wYou meditate peacefully, collecting energy from the cosmos\n\r", ch );
 		learn_from_success( ch, gsn_meditate );
-		ch->mana +=  (float) right / 50 * ch->max_mana;
+		ch->mana +=  (float) right / 20 * ch->max_mana;
 	}
 	else
 	{

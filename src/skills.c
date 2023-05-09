@@ -1909,9 +1909,9 @@ void learn_from_success( CHAR_DATA *ch, int sn )
 		chance = ch->pcdata->learned[sn] + (5 * skill_table[sn]->difficulty);
 		percent = number_percent();
 		if ( percent >= chance )
-			learn = (double)get_curr_int(ch) / number_range(175, 225);
+			learn = (double)get_curr_int(ch) / number_range(50, 100);
 		else
-			learn = (double)get_curr_int(ch) / number_range(275, 325);
+			learn = (double)get_curr_int(ch) / number_range(100, 150);
 		ch->pcdata->learned[sn] = UMIN( adept, ch->pcdata->learned[sn] + learn );
 	}
 }
@@ -1925,7 +1925,7 @@ void learn_from_failure( CHAR_DATA *ch, int sn )
 	if ( IS_NPC(ch) || ch->pcdata->learned[sn] <= 0 )
 		return;
 	adept = GET_ADEPT(ch, sn);
-	learn = (double)get_curr_int(ch) / number_range(325, 400);
+	learn = (double)get_curr_int(ch) / number_range(35, 50);
 	if ( ch->pcdata->learned[sn] < (adept-1) )
 		ch->pcdata->learned[sn] = UMIN( adept, ch->pcdata->learned[sn]+learn );
 }

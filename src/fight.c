@@ -622,7 +622,7 @@ void violence_update( void )
 	    }
 	}
 
-	/* Kiaoken drain */
+	/* Kaioken drain */
 	if (xIS_SET((ch)->affected_by, AFF_KAIOKEN) && !IS_NPC(ch)
 	   && ch->desc )
 	{
@@ -676,7 +676,7 @@ void violence_update( void )
 	  foc = 0;
 
 	ch->focus += foc;
-	ch->focus = URANGE(0,ch->focus,get_curr_int(ch));
+	ch->focus = URANGE(3,ch->focus,get_curr_int(ch));
 
         retcode = rNONE;
 
