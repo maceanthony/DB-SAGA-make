@@ -30,7 +30,7 @@ NEED_REG = -lgnuregex
 
 #Uncomment if you wish to enable the Mud Client Compression Protocol
 #Comment it out it if you are compiling with Cygwin
-OPT_FLAG = -DMCCP
+#OPT_FLAG = -DMCCP
 
 C_FLAGS = $(OPT_FLAG) -O -g3 -Wall -Wuninitialized $(PROF) $(NOCRYPT) $(DBUGFLG) -DSMAUG $(SOLARIS_FLAG) $(TIME) $(REG) -fcommon
 L_FLAGS = $(OPT_FLAG) $(PROF) $(SOLARIS_LINK) $(NEED_CRYPT) ${MATH_LINK} -lz

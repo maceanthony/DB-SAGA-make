@@ -1469,7 +1469,7 @@ Flags        0
 Target       1
 Minpos       107
 Mana         75
-Focus        7
+Focus        3
 CanCharge    1
 Rounds       8
 Code         do_energy_ball
