@@ -650,7 +650,8 @@ void violence_update( void )
 	sysdata.outBytesFlag = LOGBOUTCOMBAT;
 
 	int foc = 0;
-	foc = URANGE((get_curr_int(ch) / 8),((number_range(2, UMAX(2,get_curr_int(ch))) / 5)), get_curr_int(ch));
+	//set focus range here
+	foc = URANGE((get_curr_int(ch) / 8),((number_range((get_curr_int(ch) / 8), UMAX((get_curr_int(ch) / 8),get_curr_int(ch))) / 3)), get_curr_int(ch));
 	//ch->focus += URANGE(0,((number_range(1, UMAX(1, get_curr_int(ch))) / 5)), get_curr_int(ch));
 
 	if( !IS_NPC(ch) )
