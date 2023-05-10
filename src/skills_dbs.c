@@ -4802,7 +4802,7 @@ void do_meditate(CHAR_DATA *ch, char *argument )
 		return;
 	}
 
-		add_timer( ch, TIMER_DO_FUN, number_range(1, 3), do_meditate, 2);
+		add_timer( ch, TIMER_DO_FUN, number_range(1, 1), do_meditate, 2);
 	    return;
 	case 2:
 	if (ch->fighting)
@@ -4830,7 +4830,7 @@ void do_meditate(CHAR_DATA *ch, char *argument )
 		return;
 	}
 
-		add_timer( ch, TIMER_DO_FUN, number_range(1, 3), do_meditate, 1);
+		add_timer( ch, TIMER_DO_FUN, number_range(1, 1), do_meditate, 1);
 	    return;
 	case SUB_TIMER_DO_ABORT:
 	  ch->substate = SUB_NONE;
