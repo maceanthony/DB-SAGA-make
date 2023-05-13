@@ -177,7 +177,7 @@ char *format_obj_to_char( OBJ_DATA *obj, CHAR_DATA *ch, bool fShort )
 
 	buf[0] = '\0';
 	if ( IS_IMMORTAL(ch) )
-		ch_printf_color( ch, "&cVnum: &w%d  ", obj->pIndexData->vnum );
+		sprintf( buf, "&cVnum: &w%d  ", obj->pIndexData->vnum );
 	if ( IS_OBJ_STAT(obj, ITEM_INVIS) )
 		strcat( buf, "(Invis) " );
 	if ( (IS_AFFECTED(ch, AFF_DETECT_EVIL))
