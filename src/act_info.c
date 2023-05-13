@@ -7269,13 +7269,13 @@ void do_slist( CHAR_DATA *ch, char *argument )
 
 		if (canUse)
 		{
-			pager_printf_color( ch, "&w %20.20s       %16s   &Y%3.0f%%    &W%3d%%\n\r",
+			pager_printf_color( ch, "&w %20.20s       %16s   &Y%3.2f%%    &W%3d%%\n\r",
 			                    skill_table[snRace[i]]->name, num_punct_ld(skill_table[snRace[i]]->skill_level[ch->class]),
 			                    ch->pcdata->learned[snRace[i]], skill_table[snRace[i]]->skill_adept[ch->class]);
 		}
 		else
 		{
-			pager_printf_color( ch, "&z %20.20s       %16s   %3.0f%%    %3d%%\n\r",
+			pager_printf_color( ch, "&z %20.20s       %16s   %3.2f%%    %3d%%\n\r",
 			                    skill_table[snRace[i]]->name, num_punct_ld(skill_table[snRace[i]]->skill_level[ch->class]),
 			                    ch->pcdata->learned[snRace[i]], skill_table[snRace[i]]->skill_adept[ch->class]);
 		}
