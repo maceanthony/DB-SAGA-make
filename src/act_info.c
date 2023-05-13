@@ -7197,7 +7197,7 @@ void do_slist( CHAR_DATA *ch, char *argument )
 	int	size = 0;
 	int	i;
 	bool	canUse;
-        bool    bioPrac = FALSEa
+        bool    bioPrac = FALSE;
         int     ii = 0;
 
 	if( IS_NPC(ch) )
