@@ -2707,15 +2707,15 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 			if ((ch->pl / victim->pl) < 1.5)
 			    xp_gain = xp_gain;
 			else if ((ch->pl / victim->pl) < 2)
-			    xp_gain *= 0.85;
+			    xp_gain = xp_gain;
 			else if ((ch->pl / victim->pl) < 3)
-			    xp_gain *= 0.7;
-			else if ((ch->pl / victim->pl) < 5)
-			    xp_gain *= 0.4;
+			    xp_gain *= 0.90;
+			else if ((ch->pl / victim->pl) < 4)
+			    xp_gain *= 0.80;
 			else if ((ch->pl / victim->pl) < 6)
-			    xp_gain *= 0.25;
+			    xp_gain *= 0.50;
 			else if ((ch->pl / victim->pl) < 7)
-			    xp_gain *= 0.15;
+			    xp_gain *= 0.35;
 			else if ((ch->pl / victim->pl) < 8)
 			    xp_gain *= 0.10;
 			else if ((ch->pl / victim->pl) < 9)
@@ -2727,17 +2727,17 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 		}
 		if ( IS_NPC(victim)) {
 			if ((ch->pl / victim->pl) < 1.5)
-			    xp_gain = xp_gain;
+			    xp_gain *= 1.15;
 			else if ((ch->pl / victim->pl) < 2)
-			    xp_gain *= 0.90;
+			    xp_gain = xp_gain;
 			else if ((ch->pl / victim->pl) < 3)
-			    xp_gain *= 0.85;
-			else if ((ch->pl / victim->pl) < 5)
-			    xp_gain *= 0.4;
+			    xp_gain *= 0.90;
+			else if ((ch->pl / victim->pl) < 4)
+			    xp_gain *= 0.80;
 			else if ((ch->pl / victim->pl) < 6)
-			    xp_gain *= 0.25;
+			    xp_gain *= 0.50;
 			else if ((ch->pl / victim->pl) < 7)
-			    xp_gain *= 0.15;
+			    xp_gain *= 0.35;
 			else if ((ch->pl / victim->pl) < 8)
 			    xp_gain *= 0.10;
 			else if ((ch->pl / victim->pl) < 9)

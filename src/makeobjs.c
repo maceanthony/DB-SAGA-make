@@ -602,8 +602,8 @@ void generate_treasure( CHAR_DATA *killer, CHAR_DATA *ch, OBJ_DATA *corpse )
 
 	/* Rolling for the initial check to see if we should be generating anything at all */
 	tchance = number_range( 1, 100 );
-	//tchance originally 30 - dropped this to 5 to increase zeni drop rate - Khonsu 5-13-2023
-	if (tchance <= 5)
+	//tchance originally 30 - dropped this to 10 to increase zeni drop rate - Khonsu 5-13-2023
+	if (tchance <= 10)
 	{
 		return;
 	}

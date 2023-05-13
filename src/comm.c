@@ -1500,13 +1500,13 @@ void read_from_buffer( DESCRIPTOR_DATA *d )
 	}
 	else
 	{
-	    if ( ++d->repeat >= 20 )
+	    if ( ++d->repeat >= 100 )
 	    {
 /*		sprintf( log_buf, "%s input spamming!", d->host );
 		log_string( log_buf );
 */
 		write_to_descriptor( d->descriptor,
-		    "\n\r*** PUT A LID ON IT!!! ***\n\rYou cannot enter the same command more than 20 consecutive times!\n\r", 0 );
+		    "\n\r*** PUT A LID ON IT!!! ***\n\rYou cannot enter the same command more than 100 consecutive times!\n\r", 0 );
 		strcpy( d->incomm, "quit" );
 	    }
 	}
