@@ -2884,7 +2884,8 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
     	bug("mob(%d)zeni not -1", pMobIndex->vnum);
     mob->exp			= pMobIndex->exp;
 
-	/* Add's some varity to mobs power level -Goku 09.25.04 */
+	/* Add's some varity to mobs power level -Goku 09.25.04
+	// Commented out -Khonsu
 	if ( xIS_SET( mob->act, ACT_RANDOMIZE_PL) )
 	{
 		switch (number_range(1,10))
@@ -2909,7 +2910,7 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
 			mob->exp = (double)number_range(14000, 15000)/10000 * mob->exp;
 			break;
 		}
-	}
+	}*/
 
     mob->pl			= mob->exp;
 

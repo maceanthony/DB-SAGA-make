@@ -602,8 +602,8 @@ void generate_treasure( CHAR_DATA *killer, CHAR_DATA *ch, OBJ_DATA *corpse )
 
 	/* Rolling for the initial check to see if we should be generating anything at all */
 	tchance = number_range( 1, 100 );
-
-	if (tchance <= 30)
+	//tchance originally 30 - dropped this to 5 to increase zeni drop rate - Khonsu 5-13-2023
+	if (tchance <= 5)
 	{
 		return;
 	}
@@ -619,7 +619,7 @@ void generate_treasure( CHAR_DATA *killer, CHAR_DATA *ch, OBJ_DATA *corpse )
 	    if ( ch->in_room )
 	    {
 	      ch->in_room->area->gold_looted += zeni;
-	      sysdata.global_looted += zeni/100;
+	      sysdata.global_looted += zeni/25;
 	    }
 		if (economy_has(ch->in_room->area, zeni))
 		{
