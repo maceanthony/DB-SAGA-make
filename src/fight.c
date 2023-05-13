@@ -3549,7 +3549,7 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 		    else if (preservation || biopres )
 		      los = (long double)victim->exp * 0.03;
 		    else
-		      los = (long double)victim->exp * 0.085;
+		      los = (long double)victim->exp * 0.04;
 		  }
 		}
 		gain_exp( victim, 0 - los);
