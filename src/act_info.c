@@ -7175,14 +7175,14 @@ void do_alist( CHAR_DATA *ch, char *argument )
 		if (canUse)
 		{
 		    if( (!mystic && !canMystic) || (mystic && canMystic) )
-			pager_printf_color( ch, "&w %22.22s       %16s   &Y%4.2f%%    &W%3d%%\n\r",
+			pager_printf_color( ch, "&w %22.22s       %16s   &Y%5.2f%%    &W%3d%%\n\r",
 			                    skill_table[snRace[i]]->name, num_punct_ld(skill_table[snRace[i]]->skill_level[ch->class]),
 			                    ch->pcdata->learned[snRace[i]], skill_table[snRace[i]]->skill_adept[ch->class]);
 		}
 		else
 		{
 		    if( (!mystic && !canMystic) || (mystic && canMystic) )
-			pager_printf_color( ch, "&z %22.22s       %16s   %4.2f%%    %3d%%\n\r",
+			pager_printf_color( ch, "&z %22.22s       %16s   %5.2f%%    %3d%%\n\r",
 			                    skill_table[snRace[i]]->name, num_punct_ld(skill_table[snRace[i]]->skill_level[ch->class]),
 			                    ch->pcdata->learned[snRace[i]], skill_table[snRace[i]]->skill_adept[ch->class]);
 		}
@@ -7197,7 +7197,7 @@ void do_slist( CHAR_DATA *ch, char *argument )
 	int	size = 0;
 	int	i;
 	bool	canUse;
-        bool    bioPrac = FALSE;
+        bool    bioPrac = FALSEa
         int     ii = 0;
 
 	if( IS_NPC(ch) )
@@ -7269,13 +7269,13 @@ void do_slist( CHAR_DATA *ch, char *argument )
 
 		if (canUse)
 		{
-			pager_printf_color( ch, "&w %20.20s       %16s   &Y%4.2f%%   &W%3d%%\n\r",
+			pager_printf_color( ch, "&w %20.20s       %16s   &Y%5.2f%%   &W%3d%%\n\r",
 			                    skill_table[snRace[i]]->name, num_punct_ld(skill_table[snRace[i]]->skill_level[ch->class]),
 			                    ch->pcdata->learned[snRace[i]], skill_table[snRace[i]]->skill_adept[ch->class]);
 		}
 		else
 		{
-			pager_printf_color( ch, "&z %20.20s       %16s   %4.2f%%   %3d%%\n\r",
+			pager_printf_color( ch, "&z %20.20s       %16s   %5.2f%%   %3d%%\n\r",
 			                    skill_table[snRace[i]]->name, num_punct_ld(skill_table[snRace[i]]->skill_level[ch->class]),
 			                    ch->pcdata->learned[snRace[i]], skill_table[snRace[i]]->skill_adept[ch->class]);
 		}
