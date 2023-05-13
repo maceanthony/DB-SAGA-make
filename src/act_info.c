@@ -7175,14 +7175,14 @@ void do_alist( CHAR_DATA *ch, char *argument )
 		if (canUse)
 		{
 		    if( (!mystic && !canMystic) || (mystic && canMystic) )
-			pager_printf_color( ch, "&w %22.22s       %16s   &Y%3.0f%%    &W%3d%%\n\r",
+			pager_printf_color( ch, "&w %22.22s       %16s   &Y%3.2f%%    &W%3d%%\n\r",
 			                    skill_table[snRace[i]]->name, num_punct_ld(skill_table[snRace[i]]->skill_level[ch->class]),
 			                    ch->pcdata->learned[snRace[i]], skill_table[snRace[i]]->skill_adept[ch->class]);
 		}
 		else
 		{
 		    if( (!mystic && !canMystic) || (mystic && canMystic) )
-			pager_printf_color( ch, "&z %22.22s       %16s   %3.0f%%    %3d%%\n\r",
+			pager_printf_color( ch, "&z %22.22s       %16s   %3.2f%%    %3d%%\n\r",
 			                    skill_table[snRace[i]]->name, num_punct_ld(skill_table[snRace[i]]->skill_level[ch->class]),
 			                    ch->pcdata->learned[snRace[i]], skill_table[snRace[i]]->skill_adept[ch->class]);
 		}
