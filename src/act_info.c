@@ -4933,19 +4933,19 @@ bool gTrainSuccess(CHAR_DATA *ch, int stat, sh_int *tAbility)
 		switch ( number_range( 1, 4 ) )
 		{
 			case 1:
-				increase *= 1;
-				break;
-
-			case 2:
-				increase *= 1;
-				break;
-
-			case 3:
 				increase *= 2;
 				break;
 
-			case 4:
+			case 2:
+				increase *= 2;
+				break;
+
+			case 3:
 				increase *= 3;
+				break;
+
+			case 4:
+				increase *= 4;
 				break;
 		}
 	}
@@ -4960,28 +4960,28 @@ bool gTrainSuccess(CHAR_DATA *ch, int stat, sh_int *tAbility)
 	if (ch->race != 6)
 	{
 		if (is_saiyan(ch)) /* Saiyan */
-			xp_mod = 0.68;
-		else if (is_namek(ch)) /* Namek */
 			xp_mod = 0.65;
+		else if (is_namek(ch)) /* Namek */
+			xp_mod = 0.64;
 		else if (is_hb_hb(ch)) /* Halfbreed-hb */
-                        xp_mod = 0.67;
+                        xp_mod = 0.645;
 		else if (is_hb(ch)) /* Halfbreed */
-			xp_mod = 0.67;
+			xp_mod = 0.645;
 		else				/* Everyone Else */
-			xp_mod = 0.66;
+			xp_mod = 0.642;
 	}
 	else
 	{
 		if (ch->pcdata->absorb_pl_mod == 0) /* Saiyan */
-			xp_mod = 0.67;
+			xp_mod = 0.65;
 		else if (ch->pcdata->absorb_pl_mod == 3) /* Namek */
 			xp_mod = 0.64;
 		else if (ch->pcdata->absorb_pl_mod == 2) /* Halfbreed */
-			xp_mod = 0.66;
+			xp_mod = 0.645;
 		else if (ch->pcdata->absorb_pl_mod == 6)
-			xp_mod = 0.63;
+			xp_mod = 0.64;
 		else								/* Everyone Else */
-			xp_mod = 0.65;
+			xp_mod = 0.641;
 	}
 
 	xp_mod = (float) xp_mod - 0.01;

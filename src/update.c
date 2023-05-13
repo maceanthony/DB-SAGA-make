@@ -540,13 +540,13 @@ void gain_exp( CHAR_DATA *ch, long double gain )
 
 /*  PL high enough to gain more energy */
 
-    if (ch->exp >= (pow(ch->max_energy,2.27) * 300)
+    if (ch->exp >= (pow(ch->max_energy,2.45) * 300)
     	&& ch->max_mana < 99999 )
     {
 	set_char_color( AT_LBLUE + AT_BLINK, ch );
 	ch_printf( ch, "You gained some more energy!\n\r" );
 
-	energygain = (double)((double)get_curr_con(ch)/100 + 1) * (get_curr_con(ch) * 4) + number_range(5, 15);
+	energygain = (double)((double)get_curr_con(ch)/100 + 1) * (pow(get_curr_con(ch) * 4)) + number_range(5, 15);
 	ch->mana += energygain;
 	ch->max_mana += energygain;
 	ch->max_mana = URANGE(100, ch->max_mana, 99999);

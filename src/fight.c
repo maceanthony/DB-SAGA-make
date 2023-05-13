@@ -2654,34 +2654,34 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 		if (ch->race != 6)
 		{
 			if ( is_saiyan(ch) ) /* Saiyan */
-				xp_mod = 0.655;
+				xp_mod = 0.705;
 			else if ( is_namek(ch) ) /* Namek */
-				xp_mod = 0.66;
+				xp_mod = 0.705;
 			else if (ch->race == 19) /* Halfbreed-HB */
-                                xp_mod = 0.685;
+                                xp_mod = 0.705;
 			else if ( is_hb(ch) ) /* Halfbreed */
-				xp_mod = 0.675;
+				xp_mod = 0.705;
 			else				/* Everyone Else */
-				xp_mod = 0.665;
+				xp_mod = 0.705;
 		}
 		else
 		{
 			if (ch->pcdata->absorb_pl_mod == 0) /* Saiyan */
-				xp_mod = 0.655;
+				xp_mod = 0.704;
 			else if (ch->pcdata->absorb_pl_mod == 3) /* Namek */
-				xp_mod = 0.66;
+				xp_mod = 0.704;
 			else if (ch->pcdata->absorb_pl_mod == 2) /* Halfbreed */
-				xp_mod = 0.675;
+				xp_mod = 0.704;
 			else if (ch->pcdata->absorb_pl_mod == 6)
-				xp_mod = 0.65;
+				xp_mod = 0.700;
 			else  /* Everyone Else */
-				xp_mod = 0.665;
+				xp_mod = 0.704;
 		}
 
 		if ( !IS_NPC(victim) )
-			xp_gain = (long double) dam / 100 * pow(victim->pl, xp_mod);
+			xp_gain = (long double) dam / 175 * pow(victim->pl, xp_mod);
 		if ( IS_NPC(victim) )
-			xp_gain = (long double) dam / 100 * pow(victim->exp, xp_mod);
+			xp_gain = (long double) dam / 175 * pow(victim->exp, xp_mod);
 
 		/* Sparing and deadly combat pl gain's */
 		if ( !IS_NPC(ch) && !IS_NPC(victim)
@@ -2702,44 +2702,48 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 				xp_gain = (long double) dam / 100 * pow(victim->pl, xp_mod);
 			}
 /* PL Gains cut if player is stronger than opontants */
-
+// gaining closer to same PL is a little more rewarding -Khonsu
 		if ( !IS_NPC(victim)) {
-			if ((ch->pl / victim->pl) < 3)
+			if ((ch->pl / victim->pl) < 1.5)
 			    xp_gain = xp_gain;
-			else if ((ch->pl / victim->pl) < 4)
+			else if ((ch->pl / victim->pl) < 2)
+			    xp_gain *= 0.85;
+			else if ((ch->pl / victim->pl) < 3)
 			    xp_gain *= 0.7;
 			else if ((ch->pl / victim->pl) < 5)
-			    xp_gain *= 0.6;
-			else if ((ch->pl / victim->pl) < 6)
-			    xp_gain *= 0.5;
-			else if ((ch->pl / victim->pl) < 7)
 			    xp_gain *= 0.4;
+			else if ((ch->pl / victim->pl) < 6)
+			    xp_gain *= 0.25;
+			else if ((ch->pl / victim->pl) < 7)
+			    xp_gain *= 0.15;
 			else if ((ch->pl / victim->pl) < 8)
-			    xp_gain *= 0.3;
+			    xp_gain *= 0.10;
 			else if ((ch->pl / victim->pl) < 9)
-			    xp_gain *= 0.2;
+			    xp_gain *= 0.05;
 			else if ((ch->pl / victim->pl) < 10)
-	    		xp_gain *= 0.1;
+	    		xp_gain *= 0.01;
 			else
 				xp_gain = 0;
 		}
 		if ( IS_NPC(victim)) {
-			if ((ch->pl / victim->exp) < 3)
+			if ((ch->pl / victim->pl) < 1.5)
 			    xp_gain = xp_gain;
-			else if ((ch->pl / victim->exp) < 4)
-			    xp_gain *= 0.75;
-			else if ((ch->pl / victim->exp) < 5)
-			    xp_gain *= 0.6;
-			else if ((ch->pl / victim->exp) < 6)
-			    xp_gain *= 0.5;
-			else if ((ch->pl / victim->exp) < 7)
+			else if ((ch->pl / victim->pl) < 2)
+			    xp_gain *= 0.90;
+			else if ((ch->pl / victim->pl) < 3)
+			    xp_gain *= 0.85;
+			else if ((ch->pl / victim->pl) < 5)
 			    xp_gain *= 0.4;
-			else if ((ch->pl / victim->exp) < 8)
-			    xp_gain *= 0.3;
-			else if ((ch->pl / victim->exp) < 9)
-			    xp_gain *= 0.2;
-			else if ((ch->pl / victim->exp) < 10)
-	    		xp_gain *= 0.1;
+			else if ((ch->pl / victim->pl) < 6)
+			    xp_gain *= 0.25;
+			else if ((ch->pl / victim->pl) < 7)
+			    xp_gain *= 0.15;
+			else if ((ch->pl / victim->pl) < 8)
+			    xp_gain *= 0.10;
+			else if ((ch->pl / victim->pl) < 9)
+			    xp_gain *= 0.05;
+			else if ((ch->pl / victim->pl) < 10)
+	    		xp_gain *= 0.01;
 			else
 				xp_gain = 0;
 		}
@@ -2769,15 +2773,15 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
                         switch( number_range( 1, 4 ) )
                         {
                           case 1:
-                            xp_gain *= 1;
-                          break;
-
-                          case 2:
                             xp_gain *= 1.5;
                           break;
 
-                          case 3:
+                          case 2:
                             xp_gain *= 2;
+                          break;
+
+                          case 3:
+                            xp_gain *= 2.5;
                           break;
 
                           case 4:
