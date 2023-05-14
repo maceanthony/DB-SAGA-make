@@ -2649,6 +2649,8 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 		if (dam < 0)
 			dam = 0;
 		*/
+		if ( dam > 100 )
+			dam = 100;
 		// lowered all mods by 0.005  it isn't much but it adds up
 		// over time -Goku 09.28.04
 		if (ch->race != 6)

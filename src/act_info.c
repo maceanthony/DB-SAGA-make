@@ -4993,7 +4993,7 @@ bool gTrainSuccess(CHAR_DATA *ch, int stat, sh_int *tAbility)
 	}
 
 	xp_mod = (float) xp_mod - 0.01;
-	xp_gain = (long double) increase / 35 * pow(ch->pl, xp_mod);
+	xp_gain = (long double) increase / 50 * pow(ch->pl, xp_mod);
 
 	/* PL Gains cut if player is powered up */
 
