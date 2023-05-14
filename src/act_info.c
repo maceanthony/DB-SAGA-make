@@ -1696,7 +1696,7 @@ void do_look( CHAR_DATA *ch, char *argument )
 		set_char_color( AT_RMNAME, ch );
 		send_to_char( "\n\r", ch );
 		send_to_char( ch->in_room->name, ch );
-		ch_printf_color( ch, " &wR#-%d", pRoomIndex->vnum );
+		ch_printf_color( ch, " &wR#-%d", ch->in_room->vnum );
 		send_to_char( "\n\r", ch );
 		set_char_color( AT_RMDESC, ch );
 
