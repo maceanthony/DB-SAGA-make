@@ -2643,12 +2643,12 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 		 * muhahaha, i make pl go lower!  me am the greetist! -Goku 09.28.04
 		 */
 
-		// prevents a lot of overflow pl gains -Goku 09.28.04
+		/* prevents a lot of overflow pl gains -Goku 09.28.04
 		if (dam > victim->hit)
 			dam = victim->hit;
-		//if (dam < 0)
-		//	dam = 0;
-
+		if (dam < 0)
+			dam = 0;
+		*/
 		// lowered all mods by 0.005  it isn't much but it adds up
 		// over time -Goku 09.28.04
 		if (ch->race != 6)
