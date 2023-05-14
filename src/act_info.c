@@ -1673,13 +1673,12 @@ void do_look( CHAR_DATA *ch, char *argument )
 
 	doexaprog = str_cmp( "noprog", arg2 ) && str_cmp( "noprog", arg3 );
 
-	location = ch->in_room;
 
 	if ( arg1[0] == '\0' || !str_cmp( arg1, "auto" ) )
 	{
 
 		SHIP_DATA * ship;
-
+		location = ch->in_room;
 		sysdata.outBytesFlag = LOGBOUTMOVEMENT;
 
 		switch ( ch->inter_page )    /* rmenu */
@@ -1698,7 +1697,8 @@ void do_look( CHAR_DATA *ch, char *argument )
 		set_char_color( AT_RMNAME, ch );
 		send_to_char( "\n\r", ch );
 		send_to_char( ch->in_room->name, ch );
-		send_to_char( location->vnum, ch );
+		ch_printf_color( ch, " R#-", %d
+							location->vnum);
 		send_to_char( "\n\r", ch );
 		set_char_color( AT_RMDESC, ch );
 
