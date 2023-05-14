@@ -7253,7 +7253,7 @@ void do_slist( CHAR_DATA *ch, char *argument )
 
 	slistSort(snRace, size, ch->race);
 
-	pager_printf_color( ch, "&B--------------------------&CSkills&B----------------------------\n\r");
+	pager_printf_color( ch, "&B--------------------------&CSkills&B------------------------------\n\r");
 //	pager_printf_color( ch, "&B------------------------&CAbilities&B---------------------\n\r");
 	if (is_android(ch))
 		pager_printf_color( ch, "-----------&CName&B--------------------&CTL Needed&B--&CCurrent&B---&CMax&B---\n\r");
