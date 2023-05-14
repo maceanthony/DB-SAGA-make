@@ -1695,7 +1695,7 @@ void do_look( CHAR_DATA *ch, char *argument )
 		set_char_color( AT_RMNAME, ch );
 		send_to_char( "\n\r", ch );
 		send_to_char( ch->in_room->name, ch );
-		send_to_char( location->vnum, ch);
+		send_to_char( ch->in_room->vnum, ch);
 		send_to_char( "\n\r", ch );
 		set_char_color( AT_RMDESC, ch );
 
