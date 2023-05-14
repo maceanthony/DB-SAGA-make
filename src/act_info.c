@@ -1017,6 +1017,9 @@ void show_char_to_char_0( CHAR_DATA *victim, CHAR_DATA *ch )
 		else if ( !IS_AFFECTED(victim, AFF_POSSESS) )
 			strcat( buf, "(&gSwitched&c) " );
 	}
+	if ( IS_IMMORTAL(ch) )
+		sprintf( buf, "&cVnum: &w%d  ", victim->pIndexData->vnum );
+		
 	if ( IS_NPC(victim) && IS_AFFECTED(victim, AFF_POSSESS) && IS_IMMORTAL(ch)
 	     && victim->desc )
 	{
