@@ -2642,7 +2642,7 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 		/*
 		 * muhahaha, i make pl go lower!  me am the greetist! -Goku 09.28.04
 		 */
-
+		// I think this is bugged and looking at the victim hit AFTER damage is done. Setting dam = 0 if dam < 0 causes 0 PL on killing blow -Khonsu
 		/* prevents a lot of overflow pl gains -Goku 09.28.04
 		if (dam > victim->hit)
 			dam = victim->hit;
