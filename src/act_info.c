@@ -1630,6 +1630,7 @@ void do_look( CHAR_DATA *ch, char *argument )
 	CHAR_DATA *victim;
 	OBJ_DATA *obj;
 	ROOM_INDEX_DATA *original;
+	ROOM_INDEX_DATA *location;
 	char *pdesc;
 	bool doexaprog;
 	sh_int door;
@@ -1672,6 +1673,8 @@ void do_look( CHAR_DATA *ch, char *argument )
 
 	doexaprog = str_cmp( "noprog", arg2 ) && str_cmp( "noprog", arg3 );
 
+	location = ch->in_room;
+
 	if ( arg1[0] == '\0' || !str_cmp( arg1, "auto" ) )
 	{
 
@@ -1695,7 +1698,7 @@ void do_look( CHAR_DATA *ch, char *argument )
 		set_char_color( AT_RMNAME, ch );
 		send_to_char( "\n\r", ch );
 		send_to_char( ch->in_room->name, ch );
-		send_to_char( ch->in_room->vnum, ch);
+		send_to_char( location->vnum, ch );
 		send_to_char( "\n\r", ch );
 		set_char_color( AT_RMDESC, ch );
 
