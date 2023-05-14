@@ -336,8 +336,10 @@ int calc_zeni( long double level, CHAR_DATA *killer )
 	zeni = (dice(get_rank_by_pl(level), zeni)
 			+ (dice(get_rank_by_pl(level), zeni) / 10
 			+ dice(get_curr_lck(killer), zeni / 3) ) );
-
-	return zeni/4;
+	if (zeni < 1)
+		zeni = 2
+		
+	return zeni/2;
 
 }
 
@@ -619,7 +621,7 @@ void generate_treasure( CHAR_DATA *killer, CHAR_DATA *ch, OBJ_DATA *corpse )
 	    if ( ch->in_room )
 	    {
 	      ch->in_room->area->gold_looted += zeni;
-	      sysdata.global_looted += zeni/25;
+	      sysdata.global_looted += zeni/100;
 	    }
 		if (economy_has(ch->in_room->area, zeni))
 		{
