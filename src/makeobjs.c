@@ -337,8 +337,8 @@ int calc_zeni( long double level, CHAR_DATA *killer )
 			+ (dice(get_rank_by_pl(level), zeni) / 10
 			+ dice(get_curr_lck(killer), zeni / 3) ) );
 	if (zeni < 1)
-		zeni = 2
-		
+		zeni = 2;
+
 	return zeni/2;
 
 }
