@@ -2645,7 +2645,7 @@ ch_ret damage( CHAR_DATA *ch, CHAR_DATA *victim, int dam, int dt )
 
 		// prevents a lot of overflow pl gains -Goku 09.28.04
 		if (dam > victim->hit)
-			dam = dam - victim->hit;
+			dam = victim->hit;
 		if (dam < 0)
 			dam = 0;
 
