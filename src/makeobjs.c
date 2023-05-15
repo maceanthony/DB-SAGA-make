@@ -43,14 +43,14 @@ const struct armorgenT armor_type[] =
 	/* Type, Name, Base Weight, Armor Mod, Base Cost, Min Rank */
 
 	{ 0, "Not Defined",	0,  0, 0, 0},
-	{ 1, "Padded",		2,  0.70, 500, 0},
-	{ 2, "Leather",		3,  0.80, 1000, 2},
-	{ 3, "Riot",		8,  0.90, 2500, 3},
-	{ 4, "Combat",		9,  1.00, 5000, 4},
-	{ 5, "Battle",		7,  1.05, 10000, 5},
-	{ 6, "Assault",		7,  1.10, 25000, 6},
-	{ 7, "Ancient",		10, 1.15, 50000, 7},
-	{ 8, "Dark Wave",	20, 1.25, 100000, 8}
+	{ 1, "Padded",		1,  0.70, 500, 0},
+	{ 2, "Leather",		1,  0.80, 1000, 2},
+	{ 3, "Riot",		1,  0.90, 2500, 3},
+	{ 4, "Combat",		1,  1.00, 5000, 4},
+	{ 5, "Battle",		1,  1.05, 10000, 5},
+	{ 6, "Assault",		1,  1.10, 25000, 6},
+	{ 7, "Ancient",		1,  1.15, 50000, 7},
+	{ 8, "Dark Wave",	1,  1.25, 100000, 8}
 
 };
 
@@ -533,6 +533,8 @@ OBJ_DATA *generate_item( long double pl, long double killerpl )
 	if( number_range( 1, 300 ) == 59 )
 		newitem->level = min;
 	newitem->level = UMIN( newitem->level, killerpl * 2 );
+	if ( newitem-> level > killerpl )
+		newitem->level = killerpl;
 
 	wearLoc = number_range(0,7);
 	newitem->value[4] = newitem->value[5] = armor * armor_type[armorType].armorMod * armor_mods[wearLoc];
