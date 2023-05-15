@@ -8221,7 +8221,8 @@ void do_analyze( CHAR_DATA *ch, char *argument )
     long double range = 0;
     char buf[MAX_STRING_LENGTH];
 
-    if( (obj = get_obj_carry(ch,argument)) == NULL )
+    if( (obj = get_obj_carry(ch,argument)) == NULL 
+		&& ( obj = get_obj_wear(ch, argument) ) == NULL )
     {
 	ch_printf(ch,"You aren't carrying anything like that.\n\r");
 	return;
