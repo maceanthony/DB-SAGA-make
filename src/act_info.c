@@ -24,6 +24,7 @@
 #include <sys/stat.h>
 #include <math.h>
 #include "mud.h"
+#include <stdlib.h>
 
 
 #ifdef MCCP
@@ -88,6 +89,21 @@ bool	check_blind	args( ( CHAR_DATA *ch ) );
 void show_condition args( ( CHAR_DATA *ch, CHAR_DATA *victim ) );
 void	show_ships_to_char	args( ( SHIP_DATA *ship, CHAR_DATA *ch ) );
 void show_compass_dir	args( (CHAR_DATA *ch) );
+
+/*
+void generateCRS(int number, char* output) {
+    srand(63728); // Set a static seed for consistent random sequence
+
+    char numberString[6];
+    //sprintf(numberString, "%d", number);
+
+    int length = strlen(numberString);
+    for (int i = 0; i < length; ++i) {
+        output[i] = 'A' + (rand() % 26); // Generate random letter
+    }
+    output[length] = '\0';
+}
+*/
 
 char *	const	compass_dir	[]	=
     {
@@ -1672,8 +1688,7 @@ void do_look( CHAR_DATA *ch, char *argument )
 	argument = one_argument( argument, arg3 );
 
 	doexaprog = str_cmp( "noprog", arg2 ) && str_cmp( "noprog", arg3 );
-
-
+	
 	if ( arg1[0] == '\0' || !str_cmp( arg1, "auto" ) )
 	{
 
